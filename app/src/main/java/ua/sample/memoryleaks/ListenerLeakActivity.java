@@ -9,16 +9,16 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-public class ListenerLeakedActivity extends AppCompatActivity {
+public class ListenerLeakActivity extends AppCompatActivity {
 
-    private static String TAG = ListenerLeakedActivity.class.getSimpleName();
+    private static String TAG = ListenerLeakActivity.class.getSimpleName();
 
     private static String ACTION_FILTER = "awesome-event-name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_listener);
 
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter(ACTION_FILTER));
     }

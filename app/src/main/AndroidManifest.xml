@@ -16,18 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ua.sample.memoryleaks.ListenerLeakedActivity" />
+        <activity android:name=".ListenerLeakActivity" />
         <activity
             android:name="ua.sample.memoryleaks.ThreadLeakActivity"
             android:label="@string/title_activity_thread_leak"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="ua.sample.memoryleaks.BitmapLeakedActivity"
-            android:label="@string/title_activity_bitmap_leaked"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="ua.sample.memoryleaks.ThirdLeakActivity"
-            android:label="@string/title_activity_third_leak"
+            android:name=".RxLeakActivity"
+            android:label="@string/title_activity_rx_leak"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

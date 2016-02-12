@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MemoryUsage</string>
+    <string name="app_name">MemoryLeakSample</string>
     <string name="title_activity_thread_leak">ThreadLeakActivity</string>
-    <string name="title_activity_bitmap_leaked">BitmapLeakedActivity</string>
-    <string name="title_activity_third_leak">ThirdLeakActivity</string>
+    <string name="title_activity_listener_leaked">ListenerLeakActivity</string>
+    <string name="title_activity_rx_leak">RxLeakActivity</string>
 </resources>
