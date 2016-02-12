@@ -9,6 +9,25 @@ import java.lang.ref.WeakReference;
 
 public class HandlerLeakActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_handler);
+
+        mLeakyHandler.postDelayed(sRunnable, 1000 * 60 * 10);
+
+        // Post a message and delay its execution for 10 minutes.
+//        mLeakyHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() { /* ... */ }
+//        }, 1000 * 60 * 10);
+
+        // Go back to the previous Activity.
+//        finish();
+
+
+    }
+
     private static class SomeEventHandler extends Handler {
         private final WeakReference<HandlerLeakActivity> mActivity;
 
@@ -40,26 +59,6 @@ public class HandlerLeakActivity extends AppCompatActivity {
         @Override
         public void run() { /* ... */ }
     };
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handler_leak);
-
-        mLeakyHandler.postDelayed(sRunnable, 1000 * 60 * 10);
-
-        // Post a message and delay its execution for 10 minutes.
-//        mLeakyHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() { /* ... */ }
-//        }, 1000 * 60 * 10);
-
-        // Go back to the previous Activity.
-//        finish();
-
-
-    }
 
 
 }
