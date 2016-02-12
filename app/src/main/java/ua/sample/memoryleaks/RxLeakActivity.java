@@ -12,10 +12,7 @@ import timber.log.Timber;
 
 public class RxLeakActivity extends AppCompatActivity {
 
-    private static final String TAG = RxLeakActivity.class.getSimpleName();
-
     private Subscription mSubscription;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
