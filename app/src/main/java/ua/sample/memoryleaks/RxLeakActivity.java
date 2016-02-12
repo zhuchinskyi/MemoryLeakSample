@@ -2,13 +2,13 @@ package ua.sample.memoryleaks;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Subscription;
 import rx.functions.Action1;
+import timber.log.Timber;
 
 public class RxLeakActivity extends AppCompatActivity {
 
@@ -27,7 +27,7 @@ public class RxLeakActivity extends AppCompatActivity {
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-                        Log.d(TAG, "LeakingActivity received: " + aLong);
+                        Timber.d("LeakingActivity received: " + aLong);
                     }
                 });
     }

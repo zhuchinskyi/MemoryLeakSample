@@ -1,9 +1,10 @@
 package ua.sample.memoryleaks;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,15 +12,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(v.getContext(), ListenerLeakActivity.class);
-//                Intent intent = new Intent(v.getContext(), ThreadLeakActivity.class);
-                Intent intent = new Intent(v.getContext(), RxLeakActivity.class);
-                startActivity(intent);
-            }
-        });
     }
+
+    @OnClick(R.id.btnListenerActivity)
+    void onStartListenerLeakActivity() {
+        startActivity(new Intent(this, ListenerLeakActivity.class));
+    }
+
+    @OnClick(R.id.btnThreadActivity)
+    void onStartThreadLeakActivity() {
+        startActivity(new Intent(this, ThreadLeakActivity.class));
+    }
+
+    @OnClick(R.id.btnRxActivity)
+    void onStartRxLeakActivity() {
+        startActivity(new Intent(this, RxLeakActivity.class));
+    }
+
 }
