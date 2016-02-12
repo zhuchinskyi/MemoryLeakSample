@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".ListenerLeakActivity" />
         <activity
-            android:name="ua.sample.memoryleaks.ThreadLeakActivity"
+            android:name=".HandlerLeakActivity"
             android:label="@string/title_activity_thread_leak"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

@@ -16,7 +16,7 @@
         android:text="Listener Leak" />
 
     <Button
-        android:id="@+id/btnThreadActivity"
+        android:id="@+id/btnHandlerActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

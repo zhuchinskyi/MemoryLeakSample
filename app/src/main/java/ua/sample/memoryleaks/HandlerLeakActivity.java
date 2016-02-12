@@ -7,19 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.lang.ref.WeakReference;
 
-public class ThreadLeakActivity extends AppCompatActivity {
+public class HandlerLeakActivity extends AppCompatActivity {
 
     private static class SomeEventHandler extends Handler {
-        private final WeakReference<ThreadLeakActivity> mActivity;
+        private final WeakReference<HandlerLeakActivity> mActivity;
 
-        public SomeEventHandler(ThreadLeakActivity activity) {
+        public SomeEventHandler(HandlerLeakActivity activity) {
             this.mActivity = new WeakReference<>(activity);
         }
 
         @Override
         public void handleMessage(Message msg) {
 
-            ThreadLeakActivity activity = mActivity.get();
+            HandlerLeakActivity activity = mActivity.get();
             if (activity != null) {
                 // ...
             }
@@ -29,7 +29,7 @@ public class ThreadLeakActivity extends AppCompatActivity {
     private final SomeEventHandler mLeakyHandler = new SomeEventHandler(this);
 
 //    private final Handler mLeakyHandler = new Handler() {
-//        ThreadLeakActivity activityWeakReference;
+//        HandlerLeakActivity activityWeakReference;
 //
 //        @Override
 //        public void handleMessage(Message msg) {
@@ -45,7 +45,7 @@ public class ThreadLeakActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thread_leak);
+        setContentView(R.layout.activity_handler_leak);
 
         mLeakyHandler.postDelayed(sRunnable, 1000 * 60 * 10);
 
