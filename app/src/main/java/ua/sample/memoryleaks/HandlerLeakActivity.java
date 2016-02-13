@@ -12,7 +12,7 @@ public class HandlerLeakActivity extends AppCompatActivity {
     private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            Timber.i("Trigger");
+            Timber.i("handleMessage");
         }
     };
 

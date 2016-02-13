@@ -12,7 +12,7 @@ import timber.log.Timber;
 
 public class ListenerLeakActivity extends AppCompatActivity {
 
-    private static String ACTION_FILTER = "awesome-event-name";
+    private static String ACTION_FILTER = "event-name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
