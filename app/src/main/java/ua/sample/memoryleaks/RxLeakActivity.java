@@ -12,6 +12,11 @@ import timber.log.Timber;
 
 public class RxLeakActivity extends AppCompatActivity {
 
+    /**
+     * In this case we have a hot observable that emits a sequential number every second.
+     * To fix this issue you can use unsubscribe method in onDestroy or using RxLifecycle.
+     */
+
     private Subscription mSubscription;
 
     @Override
@@ -24,13 +29,14 @@ public class RxLeakActivity extends AppCompatActivity {
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-                        Timber.d("LeakingActivity received: " + aLong);
+                        Timber.d("RxLeakActivity received: " + aLong);
                     }
                 });
     }
 
     @Override
     protected void onDestroy() {
+//        mSubscription.unsubscribe();
         super.onDestroy();
     }
 }

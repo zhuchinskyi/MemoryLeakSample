@@ -5,14 +5,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-import timber.log.Timber;
-
 public class HandlerLeakActivity extends AppCompatActivity {
 
+    /**
+     * In this case the message holds a reference to the activity's Handler, and the Handler holds an implicit reference to its outer class.
+     * It would cause Memory Leaks of activity even after onDestroy will be called.
+     */
     private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            Timber.i("handleMessage");
+            //..
         }
     };
 
@@ -24,6 +26,7 @@ public class HandlerLeakActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                //..
             }
         }, 1000 * 60 * 10);
     }

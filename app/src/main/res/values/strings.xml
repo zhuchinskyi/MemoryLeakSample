@@ -3,4 +3,11 @@
     <string name="title_activity_listener_leaked">ListenerLeakActivity</string>
     <string name="title_activity_thread_leak">HandlerLeakActivity</string>
     <string name="title_activity_rx_leak">RxLeakActivity</string>
+    <string name="handler_fixed_leaked_activity">Handler Fixed Leaked Activity</string>
+    <string name="handler_leaked_activity">Handler Leaked Activity</string>
+    <string name="listener_leaked_activity">Listener Leaked Activity</string>
+    <string name="rx_leak">Rx Leak</string>
+    <string name="handler_leak">Handler Leak</string>
+    <string name="listener_leak">Listener Leak</string>
+    <string name="rx_leaked_activity">Rx Leaked Activity</string>
 </resources>

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Listener Leak" />
+        android:text="@string/listener_leak" />
 
     <Button
         android:id="@+id/btnHandlerActivity"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Handler Leak" />
+        android:text="@string/handler_leak" />
 
     <Button
         android:id="@+id/btnRxActivity"
@@ -29,5 +29,5 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Rx Leak" />
+        android:text="@string/rx_leak" />
 </LinearLayout>

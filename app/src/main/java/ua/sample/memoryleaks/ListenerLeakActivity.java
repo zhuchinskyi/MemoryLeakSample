@@ -11,6 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import timber.log.Timber;
 
 public class ListenerLeakActivity extends AppCompatActivity {
+    /**
+     * This code demonstrates the case of Leaked activity if you forget to unsubscribe of event.
+     * Here implemented case with LocalBroadcast but it applies to other cases with receivers.
+     */
 
     private static String ACTION_FILTER = "event-name";
 
@@ -29,6 +33,7 @@ public class ListenerLeakActivity extends AppCompatActivity {
             Timber.d("Got message: " + message);
         }
     };
+
 
     @Override
     protected void onDestroy() {
