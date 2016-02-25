@@ -11,12 +11,12 @@ public class HandlerFixedLeakActivity extends AppCompatActivity {
     /**
      * This is a fixed version of HandlerLeakActivity.
      * Static inner classes do not hold an implicit reference to their outer class, so the activity will not be leaked.
-     * SampleHandle demonstrates the right way how to hold reference to outer class using WeakReference.
+     * SampleHandler demonstrates the right way how to hold reference to outer class using WeakReference.
      */
-    private static class SampleHandle extends Handler {
+    private static class SampleHandler extends Handler {
         private final WeakReference<HandlerFixedLeakActivity> handlerFixedLeakActivityWeakReference;
 
-        public SampleHandle(HandlerFixedLeakActivity activity) {
+        public SampleHandler(HandlerFixedLeakActivity activity) {
             handlerFixedLeakActivityWeakReference = new WeakReference<>(activity);
         }
 
@@ -29,14 +29,14 @@ public class HandlerFixedLeakActivity extends AppCompatActivity {
         }
     }
 
-    private final SampleHandle handle = new SampleHandle(this);
+    private final SampleHandler handler = new SampleHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
 
-        handle.postDelayed(runnable, 1000 * 60 * 10);
+        handler.postDelayed(runnable, 1000 * 60 * 10);
     }
 
     private static final Runnable runnable = new Runnable() {
