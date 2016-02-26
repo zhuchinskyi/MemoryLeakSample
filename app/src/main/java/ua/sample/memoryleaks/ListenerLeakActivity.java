@@ -12,7 +12,7 @@ import timber.log.Timber;
 
 public class ListenerLeakActivity extends AppCompatActivity {
     /**
-     * This code demonstrates the case of Leaked activity if you forget to unsubscribe of event.
+     * This code demonstrates the case of Leaked activity if you forget to un-subscribe of event.
      * Here implemented case with LocalBroadcast but it applies to other cases with receivers.
      */
 
